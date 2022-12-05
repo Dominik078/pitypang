@@ -7,6 +7,7 @@ body{
     text-align: right;
     margin: 40px;
     color: white;
+    font-size: 1.5em;
 
 }
 
@@ -16,23 +17,27 @@ body{
 }
 #nav{
     grid-area:nav;
+    background-image: url(../img/dand2.jpg);
 }
 #content{
     grid-area:content;
+    background-image: url(../img/dandy.gif);
 }
 #aside{
     grid-area:aside;
+    background-color: url(../img/dand3.jpg);
 }
 #footer{
     grid-area:footer;
+    background-image: url(../img/dandy2.gif);
 }
 #wrapper{
     display: grid;
     gap: 5px;
     grid-template-columns: 1fr,1fr,1fr;
     grid-template-areas:
-            "header nav nav"
-            "aside footer content";
+        "header nav nav"
+        "aside footer content";
 }
 #wrapper > div{
     background-color: bisque;
@@ -44,5 +49,17 @@ body{
 }
 #wrapper > div:hover{
     opacity: 1;
-    transition: opacity 0.5s ease;
+    transition: opacity 1s ease;
+}
+
+@media all and (max-width: 500px){
+    #wrapper{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "nav"
+        "aside"
+        "fotter"
+        "content";
+    }
 }
